@@ -6,6 +6,7 @@
   --font: 'Roboto', sans-serif;
   --stylFont: "Playfair Display", serif;
   --shadow: 5px 5px 15px gray;
+  --textShadow: 5px 5px 15px black;
 }
 
 body {
@@ -33,7 +34,6 @@ body {
   min-width: 250px;
   position: relative;
   text-align: center;
-  color: white;
   float: left;
   margin-right: 20px;
   margin-top: -40px;
@@ -50,14 +50,16 @@ img.profile{
 }
 
 .imgText {
-  font-family: var(--stylFont);
+  /* font-family: var(--stylFont); */
   font-size: 3rem;
-  font-weight: 300;
+  font-weight: 400;
   width: 100%;
   position: absolute;
   bottom: 0px;
   left: 50%;
   transform: translate(-50%, -50%);
+  color: white;
+  text-shadow: var(--textShadow);
 }
 
 .about{
@@ -135,7 +137,7 @@ footer{
   display: flex;
   max-width: 1300px;
   gap: 50px;
-  margin: 200px auto 0px auto;
+  margin: 100px auto 0px auto;
   padding: 50px 50px;
   color: white;
 }
@@ -144,7 +146,10 @@ footer{
   display: flex;
   flex-direction: column;
   gap: 20px;
-  flex-shrink: 1;
+}
+
+.rightCol {
+  margin: 0px auto;
 }
 
 .linkContainer{
@@ -180,10 +185,7 @@ footer{
     position: absolute;
     bottom: 300px;
     left: 550px;
-    /* top: 0px;
-    right: 50%; */
     text-shadow: var(--shadow);
-    /* transform: translate(-50%, -50%); */
   }
 }
 
@@ -194,30 +196,32 @@ footer{
     bottom: 270px;
     left: 450px;
     width: 300px;
-    /* top: 0px;
-    right: 50%; */
     text-shadow: var(--shadow);
-    /* transform: translate(-50%, -50%); */
   }
 }
 
-/* Mobile devices (smaller than 630px) */
+/* Mobile devices (smaller than 700px) */
 @media screen and (max-width: 700px) {
+  .container{
+    padding: 15px;
+  }
   .container.first{
     background: linear-gradient(155deg, var(--themeColor) 43%, transparent 33%);
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 80px 0px 0px 0px;
+    padding: 80px 15px 0px 15px;
     margin: 0px;
   }
 
   .imgContainer{
     margin: 0px auto;
+    max-width: 450px;
+    width: 100%;
   }
 
   .imgContainer img{
-    width: 400px;
+    width: 100%;
     margin-bottom: 20px;
   }
 
@@ -234,9 +238,8 @@ footer{
   }
 
   .container.second, .container.third{
-    margin: 100px auto;
+    margin: 50px auto;
     max-width: 400px;
-    padding: 0px;
   }
 
   .container > h1, .aboutTitle, .leftCol > h1{
@@ -245,17 +248,18 @@ footer{
 
   .imgText {
     font-size: 2.7rem;
-    font-weight: 300;
     width: 100%;
     position: absolute;
     bottom: 0px;
     left: 50%;
-    transform: translate(-45%, -50%);
+    transform: translate(-50%, -50%);
   }
 
   footer{
     padding: 30px 10px 0px 10px;
     flex-wrap: wrap;
   }
-
+  .rightCol ,.leftCol{
+    margin: 0px auto;
+  }
 }
